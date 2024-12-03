@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Staff Scheduler</title>
+        <link rel="icon" type="image/x-icon" href="images/icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                </ul>
+            </nav>
+            <!-- logo -->
+            <div>
+                <img src="images/icon.png">
+            </div>
+            <h1>
+                Welcome to our staff scheduler
+            </h1>
+            <p>By default, we assign workers to ensure that at least one person is available during your working hours. In the upcoming version, you can adjust the minimum number of workers for a specific time period if you'd like.</p>
+        </header>
+        <main>
+            <form id="form">
+                <h2>Shift Registration Information</h2>
+                <fieldset>
+                    <legend>File choice</legend>
+                    <ul>
+                        <li>
+                            <input type="radio" id="userFile" name="fileChoice">
+                            <label for="userFile">Use your own file</label>
+                        </li>
+                        <li>                           
+                            <input type="radio" id="sampleFile" name="fileChoice" checked>
+                            <label for="sampleFile">Use our <a href="data.csv" download="data.csv">sample file</a></label>
+                        </li>
+                    </ul>
+                </fieldset>
+                <p id="uploadFile">
+                    <label for="registrationFile">Shift registration file (required):</label>
+                    <input type="file" accept=".csv" id="registrationFile" required>
+                </p>
+
+                <p>
+                    <label for="maxWorkingHours">Maximum workload per employee (hours):</label>
+                    <input type="number" id="maxWorkingHours" name="maxWorkingHours" min="1" step="1">
+                </p>
+
+                <p>
+                    <button type="submit" id="formPreview">View file summary</button>
+                    <button type="submit" id="formSubmit">Submit</button>
+                </p>
+
+            </form>
+            <output form="form">
+                <!-- Write information about the file here -->
+            </output>
+
+        </main>
+        <footer></footer>
+        
+    </body>
+</html>
