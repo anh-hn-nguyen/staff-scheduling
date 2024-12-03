@@ -80,10 +80,6 @@ formSubmitBtn.addEventListener("click", (event) => {
     displaySchedule();
     fileInput.value = "";
     maxWorkingHoursInput.value = "";
-
-    
-    form.style.display = "none";
-    
 });
 
 
@@ -213,7 +209,7 @@ function displayFileSummary() {
     const section  = document.createElement("section");
 
     const h2 = document.createElement("h2");
-    h2.textContent = "File summary";
+    h2.textContent = "File Summary";
 
     const container = document.createElement("div");
 
@@ -243,7 +239,7 @@ function displayFileSummary() {
     const shiftsList = document.createElement("ul");
     for (const interval of shiftIntervals) {
         const li = document.createElement("li");
-        li.textContent = `${interval[0]}-${interval[1]}`;
+        li.textContent = `${String(interval[0]).padStart(2, "0")} - ${String(interval[1]).padStart(2, "0")}`;
         shiftsList.appendChild(li);
     }
 
@@ -254,7 +250,7 @@ function displayFileSummary() {
     const workingHoursList = document.createElement("ul");
     for (const interval of mergedIntervals) {
         const li = document.createElement("li");
-        li.textContent = `${interval[0]}-${interval[1]}`;
+        li.textContent = `${String(interval[0]).padStart(2, "0")} - ${String(interval[1]).padStart(2, "0")}`;
         workingHoursList.appendChild(li);
     }
 
@@ -298,6 +294,7 @@ function displayFileSummary() {
     section.setAttribute("class", "summary");
 
     output.appendChild(section);
+    output.scrollIntoView({ behavior: "smooth" });
 }
 
 
@@ -359,6 +356,11 @@ function displaySchedule() {
         output.removeChild(output.firstChild);
     }
 
+    const section = document.createElement("section");
+
+    const h2 = document.createElement("h2");
+    h2.textContent = "Suggested Schedule";
+
     const table = document.createElement("table");
 
     // header
@@ -398,7 +400,7 @@ function displaySchedule() {
 
             // cell for the shift
             const td = document.createElement("td");
-            td.textContent = (shiftId != -1) ?`${shiftIntervals[shiftId][0]} - ${shiftIntervals[shiftId][1]}`: "N/A";
+            td.textContent = (shiftId != -1) ?`${String(shiftIntervals[shiftId][0]).padStart(2, "0")} - ${String(shiftIntervals[shiftId][1]).padStart(2, "0")}`: "N/A";
             row.appendChild(td);
         }
 
@@ -411,6 +413,9 @@ function displaySchedule() {
     }
     table.appendChild(tBody);
 
-    output.appendChild(table);
-
+    section.appendChild(h2);
+    section.appendChild(table);
+    
+    output.appendChild(section);
+    output.scrollIntoView({ behavior: "smooth" });
 }

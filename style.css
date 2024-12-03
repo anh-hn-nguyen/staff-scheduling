@@ -19,7 +19,7 @@ ul {
 }
 
 a {
-    color: white;
+    color: inherit;
 }
 
 a:hover {
@@ -36,8 +36,7 @@ body {
     font-family: "Electrolize", sans-serif;
 }
 
-form, p {
-    /* letter-spacing: 2px; */
+header p, form p, form li {
     line-height: 2rem;
 }
 
@@ -59,12 +58,23 @@ header ul {
     padding-left: 0;
     display: flex;
     font-size: 1.2rem;
+    margin-top: 5px;
 }
+
 header ul li {
     padding: 1rem;
+    border-radius: 10px;
+}
+
+header li:hover {
+    color:#f168f1;
+    background-color: rgb(252, 205, 4);
 }
 header a {
     text-decoration: none;
+}
+header p {
+    letter-spacing: 0.5px;
 }
 
 h1 {
@@ -73,11 +83,19 @@ h1 {
 
 /* Form */
 form {
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
     border-radius: 10px;
-    border: 3px dashed whitesmoke;
+    border: 3px dashed #fee6cc;
     padding: 20px;
+}
+
+form input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+form input[type="radio"] + label:hover {
+    cursor: pointer;
 }
 
 form ul {
@@ -93,9 +111,9 @@ form p:last-child {
 form p:last-child button {
     margin: 5px;
     padding: 10px;
-    color: white;
+    color: inherit;
     background: linear-gradient(90deg, rgba(101,60,87,1) 55%, rgba(177,97,196,1) 90%);
-    border: 1px solid white;
+    border: 2px solid rgb(252, 205, 4);
     border-radius: 10px;
 }
 
@@ -110,6 +128,11 @@ form p:last-child button:active {
         inset 5px 5px 5px rgb(255, 255, 255, 20%);
 }
 
+/* Output */
+output {
+    display: block;
+    margin-top: 1rem;
+}
 
 /* Summary */
 .summary > div {
@@ -127,6 +150,7 @@ form p:last-child button:active {
 }
 .summary h3 {
     text-align: center;
+    color: rgb(252, 205, 4);
 }
 
 .summary p {
@@ -138,9 +162,7 @@ form p:last-child button:active {
     margin-top: 1rem;
 }
 
-
 /* Table */
-
 table {
     table-layout: fixed;
     width: 100%;
@@ -161,23 +183,24 @@ thead {
 
 td {
     text-align: center;
+    font-size: 90%;
 }
 
 tbody tr:nth-child(even) {
-    background: linear-gradient(90deg, rgba(195,34,138,1) 44%, rgba(168,88,187,1) 86%);
+    background-color: #e476cab5;
 }
 
-tbody tr:nth-child(even):hover {
-    background: initial;
-}
   
 tbody tr:nth-child(odd) {
     background-color: #e495e4;
 }
 
 tbody tr:hover {
-    background-color: rgb(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgb(252, 205, 4);
+    color: black;
     box-shadow: 
-        inset -5px -5px 5px rgb(255, 255, 255, 30%);
+        inset -5px -5px 5px rgb(0, 0, 0, 30%);
+}
+thead {
+    color: rgb(252, 205, 4);
 }

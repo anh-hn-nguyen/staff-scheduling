@@ -374,7 +374,6 @@ function optimizeSchedule(dayId) {
 
         // check if currMerged == newMerge
         if (isSame(currMerged, newMerged)) {
-            console.log(`Remove shift ${shiftIntervals[removedShift]} at day ${dayId}`);
             const employeeId = map[removedShift];
             schedule[employeeId][dayId] = -1;
             const startTime = shiftIntervals[removedShift][0];
