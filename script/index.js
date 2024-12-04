@@ -225,7 +225,7 @@ function displayFileSummary() {
     shiftHeader.textContent = "Work shifts";
 
     const workHourHeader = document.createElement("th");
-    workHourHeader.textContent = "Working hours";
+    workHourHeader.textContent = "Work hours";
 
     const employeeHeader = document.createElement("th");
     employeeHeader.textContent = "Employees";
