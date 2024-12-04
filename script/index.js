@@ -211,12 +211,37 @@ function displayFileSummary() {
     const h2 = document.createElement("h2");
     h2.textContent = "File Summary";
 
-    const container = document.createElement("div");
+    const table = document.createElement("table");
 
-    const dayH3  = document.createElement("h3");
-    dayH3.textContent = "Work days";
+    // thead
+    const tHead = document.createElement("thead");
 
-    const dayContent = document.createElement("div");
+    const headerRow = document.createElement("tr");
+
+    const dayHeader  = document.createElement("th");
+    dayHeader.textContent = "Work days";
+
+    const shiftHeader  = document.createElement("th");
+    shiftHeader.textContent = "Work shifts";
+
+    const workHourHeader = document.createElement("th");
+    workHourHeader.textContent = "Working hours";
+
+    const employeeHeader = document.createElement("th");
+    employeeHeader.textContent = "Employees";
+
+    headerRow.appendChild(dayHeader);
+    headerRow.appendChild(shiftHeader);
+    headerRow.appendChild(workHourHeader);
+    headerRow.appendChild(employeeHeader);
+    tHead.appendChild(headerRow);
+    
+
+    // body
+    const tBody = document.createElement("tbody");
+    const bodyRow = document.createElement("tr");
+
+    const dayContent = document.createElement("td");
     const dayPara = document.createElement("p");
     dayPara.textContent = `${dayLabels.length} work days:`;
     const daysList = document.createElement("ul");
@@ -227,13 +252,8 @@ function displayFileSummary() {
     }
     dayContent.appendChild(dayPara);
     dayContent.appendChild(daysList);
-    
 
-    const shiftH3  = document.createElement("h3");
-    shiftH3.textContent = "Work shifts";
-
-
-    const shiftContent = document.createElement("div");
+    const shiftContent = document.createElement("td");
     const shiftPara = document.createElement("p");
     shiftPara.textContent = `${shiftIntervals.length} shifts available in a workday:`;
     const shiftsList = document.createElement("ul");
@@ -242,9 +262,10 @@ function displayFileSummary() {
         li.textContent = `${String(interval[0]).padStart(2, "0")} - ${String(interval[1]).padStart(2, "0")}`;
         shiftsList.appendChild(li);
     }
-
-    // const workHourH3 = document.createElement("h3");
-    // workHourH3.textContent = "Working hours";
+    shiftContent.appendChild(shiftPara);
+    shiftContent.appendChild(shiftsList);
+    
+    const workingHourContent = document.createElement("td");
     const workingHourPara = document.createElement("p");
     workingHourPara.textContent = "Based on the shift information, your working hours:";
     const workingHoursList = document.createElement("ul");
@@ -253,17 +274,10 @@ function displayFileSummary() {
         li.textContent = `${String(interval[0]).padStart(2, "0")} - ${String(interval[1]).padStart(2, "0")}`;
         workingHoursList.appendChild(li);
     }
+    workingHourContent.appendChild(workingHourPara);
+    workingHourContent.appendChild(workingHoursList);
 
-    shiftContent.appendChild(shiftPara);
-    shiftContent.appendChild(shiftsList);
-    shiftContent.appendChild(workingHourPara);
-    shiftContent.appendChild(workingHoursList);
-
-
-    const employeeH3 = document.createElement("h3");
-    employeeH3.textContent = "Employees";
-
-    const employeeContent = document.createElement("div");
+    const employeeContent = document.createElement("td");
     const employeePara = document.createElement("p");
     employeePara.textContent = `${employeeNames.length} employees:`;
     const employeesList = document.createElement("ul");
@@ -275,22 +289,18 @@ function displayFileSummary() {
     employeeContent.appendChild(employeePara);
     employeeContent.appendChild(employeesList);
 
+    bodyRow.appendChild(dayContent);
+    bodyRow.appendChild(shiftContent);
+    bodyRow.appendChild(workingHourContent);
+    bodyRow.appendChild(employeeContent);
+
+    tBody.appendChild(bodyRow);
+
+    table.appendChild(tHead);
+    table.appendChild(tBody);
 
     section.appendChild(h2);
-
-    container.appendChild(dayH3);
-    container.appendChild(shiftH3);
-    // container.appendChild(workHourH3);
-    container.appendChild(employeeH3);
-
-    container.appendChild(dayContent);
-    container.appendChild(shiftContent);
-    container.appendChild(employeeContent);
-
-
-
-    section.appendChild(container);
-
+    section.appendChild(table);
     section.setAttribute("class", "summary");
 
     output.appendChild(section);
