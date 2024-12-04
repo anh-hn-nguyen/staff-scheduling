@@ -1,3 +1,4 @@
+const sampleDataFilePath = `${window.location.origin}/staff-scheduling/data/data.csv`;
 const maxWorkingHoursInput = document.querySelector("#maxWorkingHours");
 const fileInput = document.querySelector("#registrationFile");
 const output = document.querySelector("output");
@@ -26,7 +27,7 @@ let schedule = [];
 let employees = [];
 
 
-const worker = new Worker("./generate.js");
+const worker = new Worker("script/generate.js");
 
 worker.addEventListener("message", (message) => {
     schedule = message.data.schedule;
@@ -54,7 +55,7 @@ previewBtn.addEventListener("click", (event) => {
         const file = fileInput.files[0];
         getFileSummary(file);
     } else {
-        fetch(`${window.location.origin}/staff-scheduling/data.csv`)
+        fetch(sampleDataFilePath)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("");
@@ -88,10 +89,9 @@ function retrieveFileAndGenerateSchedule() {
         return;
     }
     if (userFileRadio.checked) {
-        
         generateSchedule(fileInput.files[0]);
     } else {
-        fetch(`${window.location.origin}/staff-scheduling/data.csv`)
+        fetch(sampleDataFilePath)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("");
