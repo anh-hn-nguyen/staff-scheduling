@@ -33,7 +33,7 @@ body {
     margin-bottom: 1rem;
     background-color: #78244c;
     color: white;
-    font-family: "Electrolize", sans-serif;
+    font-family: "Chakra Petch", sans-serif;
     letter-spacing: 1.5px;
 }
 
@@ -131,6 +131,10 @@ form p:last-child button:active {
     box-shadow:
         inset -5px -5px 5px rgb(0, 0, 0),
         inset 5px 5px 5px rgb(255, 255, 255, 20%);
+}
+
+form h2 {
+    margin: 0.5rem 0;
 }
 
 /* Output */
