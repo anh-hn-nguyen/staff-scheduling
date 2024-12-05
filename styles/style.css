@@ -32,8 +32,9 @@ body {
     margin: 0 auto;
     margin-bottom: 1rem;
     background-color: #78244c;
-    color: #fee6cc;
+    color: white;
     font-family: "Electrolize", sans-serif;
+    letter-spacing: 1.5px;
 }
 
 header p, form p, form li {
@@ -73,12 +74,11 @@ header li:hover {
 header a {
     text-decoration: none;
 }
-header p {
-    letter-spacing: 0.5px;
-}
+
 
 h1 {
     text-align: center;
+    letter-spacing: 0.3rem;
 }
 
 /* Form */
@@ -86,7 +86,7 @@ form {
     width: 80%;
     margin: 0 auto;
     border-radius: 10px;
-    border: 3px dashed #fee6cc;
+    border: 3px dashed white;
     padding: 20px;
 }
 
@@ -96,6 +96,11 @@ form input[type="radio"]:hover {
 
 form input[type="radio"] + label:hover {
     cursor: pointer;
+}
+
+form input, form button {
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
 form ul {
@@ -166,7 +171,7 @@ tbody tr:nth-child(odd) {
     background-color: #e495e4;
 }
 
-tbody tr:hover {
+.schedule tbody tr:hover {
     background-color: rgb(252, 205, 4);
     color: black;
     box-shadow: 
@@ -191,4 +196,11 @@ thead {
 
 .summary ul + p {
     margin-top: 1rem;
+}
+
+.summary td:hover {
+    background-color: rgb(252, 205, 4);
+    color: black;
+    box-shadow: 
+        inset -5px -5px 5px rgb(0, 0, 0, 30%);
 }

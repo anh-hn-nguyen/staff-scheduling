@@ -425,6 +425,7 @@ function displaySchedule() {
 
     section.appendChild(h2);
     section.appendChild(table);
+    section.setAttribute("class", "schedule");
     
     output.appendChild(section);
     output.scrollIntoView({ behavior: "smooth" });
