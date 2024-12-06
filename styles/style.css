@@ -30,11 +30,15 @@ body {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    margin-bottom: 1rem;
     background-color: #78244c;
     color: white;
     font-family: "Chakra Petch", sans-serif;
     letter-spacing: 1.5px;
+}
+
+body {
+    display: grid;
+    grid-template-rows: min-content 1fr auto;
 }
 
 header p, form p, form li {
@@ -207,4 +211,21 @@ thead {
     color: black;
     box-shadow: 
         inset -5px -5px 5px rgb(0, 0, 0, 30%);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+footer p::before {
+    display: inline-block;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    margin-right: 5px;
+    background-image: url(../images/github-logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
