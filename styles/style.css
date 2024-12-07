@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-    color:#f168f1;
+    color:rgb(252, 205, 4);
 }
 
 body {
@@ -31,7 +31,7 @@ body {
     max-width: 1000px;
     height: 100vh;
     margin: 0 auto;
-    background-color: #78244c;
+    background: radial-gradient(circle, rgba(120,36,76,1) 0%, rgba(252,70,107,1) 90%);
     color: white;
     font-family: "Chakra Petch", sans-serif;
     letter-spacing: 1.5px;
@@ -73,13 +73,12 @@ header ul li {
 }
 
 header li:hover {
-    color:#f168f1;
-    background-color: rgb(252, 205, 4);
+    background-color: rgb(255, 255, 255, 30%);
+    color: rgb(252, 205, 4);
 }
 header a {
     text-decoration: none;
 }
-
 
 h1 {
     text-align: center;
