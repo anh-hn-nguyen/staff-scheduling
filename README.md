@@ -57,3 +57,8 @@ The app assigns employees to shifts based on their availability, ensuring at lea
 - Shifts are restricted to hourly time slots only.
 
 - The minimum number of workers required during any work period is 1, and this setting is not currently adjustable.
+
+## Upcoming changes
+- Shifts will be defined in hour and minute time slots.
+
+- The minimum number of workers required during a time period will be customizable.
