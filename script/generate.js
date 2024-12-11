@@ -354,7 +354,6 @@ function optimizeSchedule(dayId) {
     for (const shiftId of assignedShiftIds) {
         allIntervals.push(shiftIntervals[shiftId]);
     }
-    
 
     // merge all Intervals
     const currMerged = mergeIntervals(allIntervals);
